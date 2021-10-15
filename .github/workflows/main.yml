@@ -1,0 +1,36 @@
+name: Deploy AWS CDK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  aws_cdk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Configure aws cred
+        uses: aws-action/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
+
+      - name: Install npm
+        run:  'sudo apt update -y && sudo apt install nodejs npm -y'
+
+      - name: Install CDK
+        run:  'sod npm install -g aws-cdk'
+
+      - name: Install requirements
+        run:  'pip3 install -r requirements.txt'
+
+      - name: CDK Synth
+        run:  'cdk synth'
+
+      - name: CDK bootstrap
+        run:  'cdk bootstrap'
+
+      - name: CDK deploy
+        run:  'cdk deploy'
