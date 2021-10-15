@@ -30,6 +30,7 @@ class LambdaDataEngStack(cdk.Stack):
             scope=self,
             id="bucket-mercado-bitcoin",
             bucket_name="leo-data-lake-raw-data",
+            removal_policy=cdk.RemovalPolicy.DESTROY
         )
 
         fn.add_to_role_policy(statement=iam.PolicyStatement(
