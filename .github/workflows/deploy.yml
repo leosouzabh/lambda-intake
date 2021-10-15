@@ -36,4 +36,4 @@ jobs:
         run:  'cdk bootstrap'
 
       - name: CDK deploy
-        run:  'cdk deploy'
+        run:  'cdk deploy -f'
