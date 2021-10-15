@@ -21,7 +21,7 @@ jobs:
         run:  'sudo apt update -y && sudo apt install nodejs npm -y'
 
       - name: Install CDK
-        run:  'sod npm install -g aws-cdk'
+        run:  'sudo npm install -g aws-cdk'
 
       - name: Install requirements
         run:  'pip3 install -r requirements.txt'
