@@ -16,6 +16,9 @@ jobs:
       - name: Install CDK
         run:  'sudo npm install -g aws-cdk'
 
+      - name: Install requirements for build
+        run:  'pip3 install -r requirements-build.txt'
+
       - name: Configure aws cred
         uses: aws-action/configure-aws-credentials@v1
         with:
