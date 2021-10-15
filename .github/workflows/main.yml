@@ -23,8 +23,11 @@ jobs:
       - name: Install CDK
         run:  'sudo npm install -g aws-cdk'
 
+      - name: Install requirements for build
+        run:  'pip3 install -r requirements-build.txt'
+
       - name: Install requirements
-        run:  'pip3 install -r requirements.txt -t lambda_data_eng/code'
+        run:  'pip3 install -r requirements-deploy.txt -t lambda_data_eng/code'
 
       - name: CDK Synth
         run:  'cdk synth'
