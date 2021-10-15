@@ -1,4 +1,4 @@
-name: CDK Destroy Lambda Intake
+name: Destroy Lambda Intake
 
 on:
   workflow_dispatch:

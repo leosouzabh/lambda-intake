@@ -1,4 +1,4 @@
-name: CDK Deploy Lambda Intake
+name: Deploy Lambda Intake
 
 on:
   workflow_dispatch:
