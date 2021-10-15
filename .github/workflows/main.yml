@@ -57,4 +57,4 @@ jobs:
           aws-region: eu-west-1
           
       - name: CDK destroy
-        run:  'cdk destroy'
+        run:  'cdk destroy -f'
